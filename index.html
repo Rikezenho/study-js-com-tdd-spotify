@@ -6,11 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Spotify Wrapper</title>
+  <style>
+    #app {
+      font-size: 0;
+    }
+
+    .cover {
+      width: 25%;
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      vertical-align: top;
+    }
+  </style>
 </head>
 
 <body>
   <h1>Spotify Wrapper</h1>
+  <div id="app"></div>
   <script src="dist/spotify-wrapper.umd.min.js"></script>
+  <script>
+    const albums = spotifyWrapper.searchAlbums('Incubus')
+
+    albums
+      .then(data => {
+        if (!data.albums) return console.log('Gere um novo Auth Token para funcionar o exemplo!')
+
+        const markup = data.albums.items.map(item => `<img src='${item.images[0].url}' alt='${item.name}' class='cover' />`).join('')
+
+        document.querySelector('#app').innerHTML = markup
+      })
+  </script>
 </body>
 
 </html>

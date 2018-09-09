@@ -1,6 +1,6 @@
 export const HEADERS = {
   Authorization:
-    "Bearer BQDZYRRnE7eSi8yoQISOmFv-yB1Tqxnt4UOpx6OaS_Px0tsculaOL8VKkzzc9i8Dc3eDKgVMpRwA0lUQMBV670JoZuVkgELXvx_tIkZBkykSmUPbb66C5quCIkTx9bxIJEx_oyiYR5Xmi8mIfCHD5XQvOaLPiru4h9ajVp0JaIRz3ZRWBRjNLeGlkKi3ZnJkpVA8-ww84UuCtzE2Ehk_73jOYRheqw3KqRaCnEqqhu6Ka_Sq84xnPHHm0KB6hJLbdGNDzkFJIReeq9w5mw"
+    "Bearer BQBeuG0C59DzA0uZHZ3UXgwdMZGe4bACNDfvLlV3QSWNUJFxZTIa0D3K2ZzwBdgdp-XqizM79rXhAoUbCkR-VHkV7XUHwjKp0IwCnT0v4PsWwUNtYqHov8K0pyQ8_ePbMwX0Wt6ocshcfaNhTvARim3EKaXi-bb3-5Djx2nfiAvf6yNsRMjWvrrnm5bt3nWmqI5rYgHEhK2kwtM4dOBiAB4LQI7wTg3QDtNfZU-78qtDAUqReiS-0DPV88pG2o9_w0yYk-79ubt91eGTTA"
 };
 
 export const API_URL = "https://api.spotify.com/v1";
