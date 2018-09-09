@@ -4,4 +4,11 @@ export const getAlbum = id =>
   fetch(`https://api.spotify.com/v1/albums/${id}`, {
     headers
   }).then(data => data.json());
-export const getAlbumTracks = () => {};
+export const getAlbums = ids =>
+  fetch(`https://api.spotify.com/v1/albums?ids=${ids}`, {
+    headers
+  }).then(data => data.json());
+export const getAlbumTracks = id =>
+  fetch(`https://api.spotify.com/v1/albums/${id}/tracks`, {
+    headers
+  }).then(data => data.json());
