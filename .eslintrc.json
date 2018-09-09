@@ -4,6 +4,7 @@
   "rules": {
     "comma-dangle": "off",
     "no-unused-expressions": "off",
+    "arrow-parens": "off",
     "quotes": ["error", "double"]
   },
   "globals": {
