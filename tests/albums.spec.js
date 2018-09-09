@@ -2,6 +2,7 @@ import chai, { expect } from "chai";
 import sinon from "sinon";
 import sinonChai from "sinon-chai";
 import { getAlbum, getAlbums, getAlbumTracks } from "../src/albums";
+import { API_URL } from "../src/config";
 
 global.fetch = require("node-fetch");
 
@@ -37,7 +38,7 @@ describe("Album", () => {
     it("should call fetch with the correct URL", () => {
       getAlbum("4aawyAB9vmqN3uQ7FjRGTy");
       expect(fetchedStub).to.have.been.calledWith(
-        "https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy"
+        `${API_URL}/albums/4aawyAB9vmqN3uQ7FjRGTy`
       );
     });
     // verifica se o dado é recebido pela Promise
@@ -58,7 +59,7 @@ describe("Album", () => {
     it("should call fetch with the correct URL", () => {
       getAlbums(["4aawyAB9vmqN3uQ7FjRGTy", "4aawyAB9vmqN3uQ7FjRGTk"]);
       expect(fetchedStub).to.have.been.calledWith(
-        "https://api.spotify.com/v1/albums?ids=4aawyAB9vmqN3uQ7FjRGTy,4aawyAB9vmqN3uQ7FjRGTk"
+        `${API_URL}/albums?ids=4aawyAB9vmqN3uQ7FjRGTy,4aawyAB9vmqN3uQ7FjRGTk`
       );
     });
     // verifica se o dado é recebido pela Promise
@@ -82,7 +83,7 @@ describe("Album", () => {
     it("should call fetch with the correct URL", () => {
       getAlbumTracks("4aawyAB9vmqN3uQ7FjRGTy");
       expect(fetchedStub).to.have.been.calledWith(
-        "https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy/tracks"
+        `${API_URL}/albums/4aawyAB9vmqN3uQ7FjRGTy/tracks`
       );
     });
     // verifica se o dado é recebido pela Promise

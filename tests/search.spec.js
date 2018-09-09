@@ -7,13 +7,14 @@ import {
   searchAlbums,
   searchTracks,
   searchPlaylists
-} from "../src/main";
+} from "../src/search";
+import { API_URL } from "../src/config";
 
 global.fetch = require("node-fetch");
 
 chai.use(sinonChai);
 
-describe("Spotify Wrapper", () => {
+describe("Search", () => {
   let fetchedStub;
   beforeEach(() => {
     fetchedStub = sinon.stub(global, "fetch");
@@ -61,19 +62,19 @@ describe("Spotify Wrapper", () => {
         search("Incubus", "artist");
 
         expect(fetchedStub).to.have.been.calledWith(
-          "https://api.spotify.com/v1/search?q=Incubus&type=artist"
+          `${API_URL}/search?q=Incubus&type=artist`
         );
 
         search("Incubus", "album");
         expect(fetchedStub).to.have.been.calledWith(
-          "https://api.spotify.com/v1/search?q=Incubus&type=album"
+          `${API_URL}/search?q=Incubus&type=album`
         );
       });
       context("passing more than one type", () => {
         search("Incubus", ["artist", "album"]);
 
         expect(fetchedStub).to.have.been.calledWith(
-          "https://api.spotify.com/v1/search?q=Incubus&type=artist,album"
+          `${API_URL}/search?q=Incubus&type=artist,album`
         );
       });
     });
@@ -93,7 +94,7 @@ describe("Spotify Wrapper", () => {
       searchArtists("Incubus");
 
       expect(fetchedStub).to.have.been.calledWith(
-        "https://api.spotify.com/v1/search?q=Incubus&type=artist"
+        `${API_URL}/search?q=Incubus&type=artist`
       );
     });
   });
@@ -107,7 +108,7 @@ describe("Spotify Wrapper", () => {
       searchAlbums("Incubus");
 
       expect(fetchedStub).to.have.been.calledWith(
-        "https://api.spotify.com/v1/search?q=Incubus&type=album"
+        `${API_URL}/search?q=Incubus&type=album`
       );
     });
   });
@@ -121,7 +122,7 @@ describe("Spotify Wrapper", () => {
       searchTracks("Incubus");
 
       expect(fetchedStub).to.have.been.calledWith(
-        "https://api.spotify.com/v1/search?q=Incubus&type=track"
+        `${API_URL}/search?q=Incubus&type=track`
       );
     });
   });
@@ -135,7 +136,7 @@ describe("Spotify Wrapper", () => {
       searchPlaylists("Incubus");
 
       expect(fetchedStub).to.have.been.calledWith(
-        "https://api.spotify.com/v1/search?q=Incubus&type=playlist"
+        `${API_URL}/search?q=Incubus&type=playlist`
       );
     });
   });
