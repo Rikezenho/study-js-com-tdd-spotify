@@ -78,7 +78,7 @@ describe("Spotify Wrapper", () => {
       });
     });
     it("should return the JSON data from the promise", () => {
-      search("Incubus", "artist").then(data => {
+      return search("Incubus", "artist").then(data => {
         expect(data).to.be.eql({ body: "json" });
       });
     });

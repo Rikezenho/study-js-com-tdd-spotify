@@ -42,7 +42,7 @@ describe("Album", () => {
     });
     // verifica se o dado é recebido pela Promise
     it("should receive the correct data from Promise", () => {
-      getAlbum("4aawyAB9vmqN3uQ7FjRGTy").then(data => {
+      return getAlbum("4aawyAB9vmqN3uQ7FjRGTy").then(data => {
         expect(data).to.be.eql({ body: "json" });
       });
     });
