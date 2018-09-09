@@ -1,7 +1,7 @@
 import { search, searchArtists, searchAlbums, searchPlaylists } from "./search";
 import { getAlbum, getAlbums, getAlbumTracks } from "./albums";
 
-module.exports = {
+export {
   search,
   searchArtists,
   searchAlbums,
