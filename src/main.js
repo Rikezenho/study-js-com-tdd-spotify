@@ -1,7 +1,9 @@
+const headers = require("./config").getHeaders();
+
 export const search = (query, type) =>
-  fetch(`https://api.spotify.com/v1/search?q=${query}&type=${type}`).then(
-    data => data.json()
-  );
+  fetch(`https://api.spotify.com/v1/search?q=${query}&type=${type}`, {
+    headers
+  }).then(data => data.json());
 export const searchArtists = query => search(query, "artist");
 export const searchAlbums = query => search(query, "album");
 export const searchTracks = query => search(query, "track");
