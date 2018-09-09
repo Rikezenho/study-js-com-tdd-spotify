@@ -14,8 +14,8 @@
     "build:examples:watch": "npm run buildExamples -- --watch",
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint",
-    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
-    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register --watch",
     "test:coverage": "nyc npm test"
   },
   "nyc": {
@@ -41,15 +41,18 @@
   "bugs": {
     "url": "https://github.com/Rikezenho/study-js-com-tdd-spotify.git/issues"
   },
+  "resolutions": {
+    "babel-core": "7.0.0-bridge.0"
+  },
   "homepage": "https://github.com/Rikezenho/study-js-com-tdd-spotify.git#readme",
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
-    "babel-cli": "^6.24.1",
-    "babel-loader": "^8.0.2",
-    "babel-preset-env": "^1.3.2",
-    "babel-register": "^6.24.0",
+    "@babel/register": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.0",
     "chai": "^3.5.0",
     "eslint": "^4.0.0",
     "eslint-config-airbnb-base": "^11.2.0",
