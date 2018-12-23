@@ -1,5 +1,7 @@
 # Study: JS com TDD - Spotify Wrapper
 
+[![Build Status](https://travis-ci.com/Rikezenho/study-js-com-tdd-spotify.svg?branch=master)](https://travis-ci.com/Rikezenho/study-js-com-tdd-spotify)
+
 A wrapper to work with the [Spotify Web API](https://developer.spotify.com/web-api/).
 
 ## Browser Support
